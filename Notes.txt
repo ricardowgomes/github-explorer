@@ -1,0 +1,66 @@
+Iniciando o projeto (package.json)
+yarn init -y (ou npm init -y)
+
+Instalando react
+yarn add react
+
+Instalando react-dom (comunicacao com HTML)
+yarn add react-dom
+
+Babel, converte codigo para o browser
+https://babeljs.io/
+yarn add @babel/core @babel/cli @babel/preset-env -D
+
+[
+"@babel/core": 90% da biblioteca do Babel
+"@babel/cli": para executar o babel na linha de comando
+"@babel/preset-env": identifica e ve qual eh a melhor conversao de codigo possivel
+]
+
+converter arquivo com babel
+yarn babel src/index.js --out-file dist/bundle.js
+
+Fazer o Babel interpretar o codigo html dentro do React
+yarn add @babel/preset-react -D
+
+Instalacao do Webpack
+yarn add webpack webpack-cli webpack-dev-server -D
+
+Instalando Babel-loader (integracao entre o Babel e o Web-pack)
+yarn add babel-loader -D
+
+Plugin para nao precisar referenciar o arquivo bundle.js (<script src="../dist/bundle.js"></script>) no index.html
+yarn add html-webpack-plugin -D
+
+Inicializa local host com execucao em realtime
+yarn webpack serve
+
+Criacao da variavel NODE_ENV
+Linux e Mac no terminal:
+NODE_ENV=production yarn webpack
+
+Windows (comando para definir variaveis ambiente)
+yarn add cross-env -D
+
+Instalando interpretador de CSS
+yarn add style-loader css-loader -D
+
+Instalando o SASS
+yarn add sass-loader -D
+yarn add sass -D
+yarn remove sass
+yarn add node-sass -D
+
+#Componentes sao funcoes com primeira letra maiuscula, e sempre um componente por arquivo
+
+Nessa aula iremos construir o segundo componente React e entender como funciona a interpolação de código JavaScript dentro do código HTML de um componente.
+
+#Posso acessar propriedades entre-componentes (de um componente pai a um componente filho)
+
+O segundo conceito a ser aprendido no React é o conceito de propriedade. Como as informações são compartilhadas entre dois ou mais componentes e como podemos usar isso a nosso favor para deixarmos as responsabilidades bem separadas no projeto.
+
+
+
+
+
+
