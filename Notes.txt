@@ -59,6 +59,23 @@ Nessa aula iremos construir o segundo componente React e entender como funciona 
 
 O segundo conceito a ser aprendido no React é o conceito de propriedade. Como as informações são compartilhadas entre dois ou mais componentes e como podemos usar isso a nosso favor para deixarmos as responsabilidades bem separadas no projeto.
 
+Fragment
+<>
+</>
+
+useState from react:
+monitora variaveis especificas para ver se elas mudaram
+
+funcao que comeca com "use" no React sao hooks;
+
+react fast refresh
+manter o estado dos componentes e sem perder o refresh real time do webpack
+yarn add -D @pmmmwh/react-refresh-webpack-plugin react refresh
+
+Filtrar se o valor eh verdadeiro
+.filter(Boolean)
+
+
 
 
 
