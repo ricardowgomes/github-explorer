@@ -1,22 +1,25 @@
 import { RepositoryItem } from "./RepositoryItem";
+import { useState, useEffect } from 'react';
 import '../styles/repositories.scss';
 
-const repository = {
-  name: "unform2",
-  description: "Forms in React",
-  link: "https://github.com/unform/unform"
-}
-
 export function RepositoryList() {
+  const [repositories, setRepositories] = useState([]);
+  useEffect(() => {
+    fetch('https://api.github.com/orgs/rocketseat/repos')
+      .then(response => response.json())
+      .then(data => setRepositories(data))
+  }, []); // Segundo argumento define qual variável que muda para a função executar, se vazio, vai executar uma unica vez, SE O SEGUNDO ARGUMENTO NAO FOR PASSADO, A FUNÇÃO EXECUTA NUM LOOP INFINITO;
+
   return (
     <section className="repository-list">
       <h1>Repository List</h1>
 
       <ul>
-        <RepositoryItem repository={repository} />
-        <RepositoryItem repository={repository} />
-        <RepositoryItem repository={repository} />
-        <RepositoryItem repository={repository} />
+        {repositories.map(repository => {
+          return <RepositoryItem
+            key={repository.id}
+            repository={repository} />
+        })}
       </ul>
 
     </section>
