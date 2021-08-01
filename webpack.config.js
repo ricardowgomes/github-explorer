@@ -9,14 +9,14 @@ const isDevelopment = process.env.NODE_ENV !== 'production';
 module.exports = {
   mode: isDevelopment ? 'development' : 'production',
   devtool: isDevelopment ? 'eval-source-map' : 'source-map', // Detect errors in Dev fase
-  entry: path.resolve(__dirname, 'src', 'index.jsx'),
+  entry: path.resolve(__dirname, 'src', 'index.tsx'),
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js'
   },
 
   resolve: {
-    extensions: ['.js', '.jsx'], // To read different extensions
+    extensions: ['.js', '.jsx', '.ts', '.tsx'], // To read different extensions
   },
   devServer: {
     contentBase: path.resolve(__dirname, 'public'),
@@ -31,7 +31,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.jsx$/,
+        test: /\.(j|t)sx$/,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
